@@ -11,9 +11,10 @@ using System;
 namespace Moni.Migrations
 {
     [DbContext(typeof(MoniContext))]
-    partial class MoniContextModelSnapshot : ModelSnapshot
+    [Migration("20171004172614_UserStructure")]
+    partial class UserStructure
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,21 +99,13 @@ namespace Moni.Migrations
 
                     b.Property<DateTime>("Created");
 
-                    b.Property<string>("Password")
-                        .IsRequired();
+                    b.Property<string>("Login");
 
-                    b.Property<string>("Salt")
-                        .IsRequired();
+                    b.Property<string>("Password");
 
                     b.Property<DateTime?>("Updated");
 
-                    b.Property<string>("Username")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("Username")
-                        .IsUnique();
 
                     b.ToTable("User");
                 });

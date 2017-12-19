@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Moni.Repository;
 using Moni.Models;
 using System.Linq.Dynamic.Core;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Moni.Controllers
 {
@@ -18,6 +18,7 @@ namespace Moni.Controllers
 
         // GET api/values
         [HttpGet]
+        [Authorize("Bearer")]
         public ActionResult Get(int itensPerPage = 10, int page = 0, string fields = null)
         {
             TreatFields(ref fields);

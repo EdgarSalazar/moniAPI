@@ -6,7 +6,7 @@ namespace Moni.Models
 {
     public abstract class ModelBase
     {
-        public ModelBase()
+        protected ModelBase()
         {
             Created = DateTime.Now; 
         }

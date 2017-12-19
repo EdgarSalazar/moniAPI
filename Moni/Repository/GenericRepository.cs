@@ -9,7 +9,7 @@ namespace Moni.Repository
 {
     public abstract class GenericRepository<T> where T : class
     {
-        public GenericRepository(MoniContext context)
+        protected GenericRepository(MoniContext context)
         {
             Context = context;
         }
